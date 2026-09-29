@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AI Channel — Full Site Prototype</title>
+<title>AI Channel, Full Site Prototype</title>
 <style>
     :root{
       --bg:#FAFAF8;
@@ -1068,7 +1068,7 @@ body{
   border-radius:12px!important;
 }
 
-/* HERO — human, calm, preparedness-oriented */
+/* HERO, human, calm, preparedness-oriented */
 #home .hero{
   background:
     radial-gradient(circle at 82% 10%,rgba(49,94,251,.08),transparent 30%),
@@ -1148,7 +1148,7 @@ body{
   letter-spacing:.1em!important;
 }
 
-/* OFFERS — pathways, not four floating SaaS cards */
+/* OFFERS, pathways, not four floating SaaS cards */
 #home #offers{
   background:#FFFFFF!important;
   border-top:1px solid #E7E9ED;
@@ -1191,7 +1191,7 @@ body{
   line-height:1.55!important;
 }
 
-/* ROLES — single-row: all 7 visible; one expanded + compact peers */
+/* ROLES, single-row: all 7 visible; one expanded + compact peers */
 #home #roles,
 #home .role-wrap{
   background:var(--warm)!important;
@@ -1275,7 +1275,7 @@ body{
   align-self:stretch!important;
   display:flex!important;
   flex-direction:column!important;
-  overflow:visible!important;
+  overflow:hidden!important;
   background:#fff!important;
   border:1px solid #DADDE3!important;
   border-radius:15px!important;
@@ -1336,7 +1336,7 @@ body{
   flex:1 1 auto!important;
   align-items:stretch!important;
   gap:8px!important;
-  padding:14px 0 22px!important;
+  padding:0 0 22px!important;
   min-height:0!important;
   height:auto!important;
   width:100%;
@@ -1355,8 +1355,8 @@ body{
   margin:0;
   padding:0;
   overflow:hidden;
-  /* Clip photo to card top corners; card itself stays overflow:visible for text */
-  border-radius:14px 14px 0 0;
+  /* Flush to the card’s top edge; the card clips the rounded corners */
+  border-radius:0;
   border:0;
   border-bottom:0;
   background:#E8E8E6;
@@ -1369,7 +1369,7 @@ body{
   max-height:160px;
   flex:0 0 160px;
   margin:0;
-  border-radius:14px 14px 0 0;
+  border-radius:0;
 }
 #home .role-photo img{
   width:100%;height:100%;object-fit:cover;
@@ -1463,7 +1463,7 @@ body{
   #home .role.is-selected .role-photo{height:120px;min-height:120px;flex:0 0 auto}
 }
 
-/* NEXT — human, practical, calmer than marketing cards */
+/* NEXT, human, practical, calmer than marketing cards */
 #home #next{
   background:#FFFFFF!important;
 }
@@ -1506,50 +1506,133 @@ body{
   font-size:28px!important;
 }
 
-/* ABOUT — readable text column + photo */
+/* ABOUT — statement beside photo, principles as one row underneath */
 #home #about{
-  background:var(--warm)!important;
+  background:#fff!important;
 }
 #home #about .eco{
-  display:grid!important;
-  grid-template-columns:minmax(0,1fr) minmax(240px,340px)!important;
-  gap:40px 48px!important;
-  align-items:start!important;
+  display:block!important;
   padding:0!important;
   background:transparent!important;
   border:0!important;
   border-radius:0!important;
   box-shadow:none!important;
 }
+#home #about .about-intro{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);
+  gap:28px 48px;
+  align-items:stretch;
+}
 #home #about .eco-copy{
-  max-width:42rem;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+}
+#home #about .about-kicker-row{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin:0 0 16px;
+}
+#home #about .about-logo{
+  width:124px;
+  max-width:42%;
+  height:auto;
+  display:block;
+  margin:0;
 }
 #home #about .eco h2{
-  font-size:clamp(40px,3.2vw,48px)!important;
+  font-size:clamp(32px,2.7vw,44px)!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
+  max-width:13em!important;
+  margin:0 0 16px!important;
+}
+#home #about .about-photo{
+  width:100%!important;
+  height:100%!important;
+  min-height:320px!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  overflow:hidden;
+  border-radius:20px;
+  margin:0!important;
+  background:#E7E6E2;
+  float:none!important;
+}
+#home #about .about-lead{
+  font-size:17.5px!important;
+  line-height:1.55!important;
+  color:#344054!important;
+  margin:0 0 20px!important;
+  max-width:38rem;
+}
+#home #about .about-principles{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:28px 36px;
+  margin:36px 0 0;
+  padding-top:28px;
+  border-top:1px solid #E4E7EC;
+}
+#home #about .about-principle{
+  background:transparent;
+  border:0;
+  border-radius:0;
+  padding:0;
+}
+#home #about .about-principle h3{
+  font-size:20px!important;
   line-height:1.2!important;
   letter-spacing:-.03em!important;
-  max-width:none!important;
-  margin:8px 0 20px!important;
+  margin:0 0 8px!important;
 }
-#home #about .eco p{
-  font-size:17.5px!important;
-  line-height:1.65!important;
+#home #about .about-principle p{
+  margin:0!important;
+  font-size:15px!important;
+  line-height:1.55!important;
   color:#475467!important;
-  margin:0 0 1.15em!important;
-  max-width:40rem;
+}
+@keyframes about-rise{
+  from{opacity:0;transform:translateY(18px)}
+  to{opacity:1;transform:none}
+}
+#home #about.will-animate .eco-copy,
+#home #about.will-animate .about-photo,
+#home #about.will-animate .about-principle{
+  opacity:0;
+}
+#home #about.will-animate.is-in .eco-copy{
+  animation:about-rise .7s cubic-bezier(.22,.8,.3,1) both;
+}
+#home #about.will-animate.is-in .about-photo{
+  animation:about-rise .85s .1s cubic-bezier(.22,.8,.3,1) both;
+}
+#home #about.will-animate.is-in .about-principle{
+  animation:about-rise .65s cubic-bezier(.22,.8,.3,1) both;
+}
+#home #about.will-animate.is-in .about-principle:nth-child(1){animation-delay:.18s}
+#home #about.will-animate.is-in .about-principle:nth-child(2){animation-delay:.28s}
+#home #about.will-animate.is-in .about-principle:nth-child(3){animation-delay:.38s}
+@media(prefers-reduced-motion:reduce){
+  #home #about.will-animate .eco-copy,
+  #home #about.will-animate .about-photo,
+  #home #about.will-animate .about-principle{
+    opacity:1;
+    animation:none!important;
+  }
+}
+#home #about .about-prose p{
+  font-size:16.5px!important;
+  line-height:1.6!important;
+  color:#475467!important;
+  margin:0 0 14px!important;
 }
 #home #about .eco .actions{
   margin-top:8px;
-}
-#home #about .about-photo{
-  width:100%;
-  height:auto;
-  aspect-ratio:4/3;
-  max-height:280px;
-  overflow:hidden;
-  border-radius:14px;
-  margin:0;
-  background:#E7E6E2;
+  justify-content:flex-start;
 }
 #home #about .about-photo img{
   width:100%;
@@ -1559,7 +1642,7 @@ body{
   filter:saturate(.64) contrast(.98) brightness(.98);
 }
 
-/* NEWSLETTER — strong preparedness anchor, still simple */
+/* NEWSLETTER, strong preparedness anchor, still simple */
 #home #newsletter{
   background:#142033!important;
   color:#fff!important;
@@ -1636,14 +1719,10 @@ body{
   #home .offer:nth-child(-n+2){
     border-bottom:1px solid #DDE2E8!important;
   }
-  #home #about .eco{
-    grid-template-columns:1fr!important;
-    gap:28px!important;
-  }
-  #home #about .about-photo{
-    order:-1;
-    max-height:240px;
-  }
+  #home #about .about-intro{grid-template-columns:1fr}
+  #home #about .about-photo{height:220px!important;min-height:0!important;order:-1}
+  #home #about .eco h2{max-width:none!important}
+  #home #about .about-principles{grid-template-columns:1fr;margin-top:28px}
 }
 @media(max-width:640px){
   #home .hero{
@@ -1804,7 +1883,7 @@ body{
 <main id="home">
 <section class="hero">
 <div class="container hero-inner human-prep-hero">
-<div class="human-prep-copy"><div class="kicker">A practical guide to navigating AI</div><h1>Understand AI. Use it well. Prepare for what comes next.</h1><p>Everything you need to make better decisions about AI — for your work, your organization, and your future.</p><div class="actions">
+<div class="human-prep-copy"><div class="kicker">A practical guide to navigating AI</div><h1>Understand AI. Use it well. Prepare for what comes next.</h1><p>Everything you need to make better decisions about AI, for your work, your organization, and your future.</p><div class="actions">
 <button class="btn btn-primary" onclick="document.getElementById('offers').scrollIntoView({behavior:'smooth'})">See what’s available</button>
 <button class="btn btn-secondary" onclick="document.getElementById('roles').scrollIntoView({behavior:'smooth'})">Find what’s relevant to me</button>
 </div><div class="search">
@@ -1857,9 +1936,9 @@ body{
 <p>Curated resources from across AI Channel, rather than everything at once.</p>
 </div>
 <div class="featured">
-<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1562071707-7249ab429b2a?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Guide</span></div><div class="card-body"><h3>How Could AI Change Your Work?</h3><p>A practical way to think about task exposure, resilience and what may stay valuable.</p><a href="#" onclick="showExplore('articles');return false;">Read the guide →</a></div></div>
-<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1774600134168-b9ebd714e4e1?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Tool</span></div><div class="card-body"><h3>Check Your Job</h3><p>Explore which parts of your role may be more exposed and where human judgment still matters.</p><a href="#" onclick="showExplore('tools');return false;">Try the tool →</a></div></div>
-<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Guide</span></div><div class="card-body"><h3>AI Is Moving Fast. How Worried Should You Be?</h3><p>A grounded look at what could go wrong, where experts disagree, and how to think about AI risk without either panicking or dismissing it.</p><a href="#" onclick="showExplore('articles');return false;">Read the guide →</a></div></div>
+<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1562071707-7249ab429b2a?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Work &amp; preparedness</span></div><div class="card-body"><h3>How will AI affect my job, role, or organisation, and what should I do about it?</h3><p>Understand how AI could change your work, workforce or organization, where exposure is highest, and what practical steps make sense now.</p><a href="#" onclick="showExplore('articles');return false;">Explore work &amp; preparedness →</a></div></div>
+<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1774600134168-b9ebd714e4e1?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Practical AI use</span></div><div class="card-body"><h3>How can I use AI effectively and safely?</h3><p>Practical guidance on choosing and using AI tools, integrating them into work or education, building skills, and protecting sensitive data.</p><a href="#" onclick="showExplore('articles');return false;">Explore practical AI use →</a></div></div>
+<div class="card"><div class="visual"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&amp;fit=crop&amp;w=1000&amp;q=82"/><span class="badge">Trust &amp; verification</span></div><div class="card-body"><h3>Can I trust AI and its outputs?</h3><p>Understand accuracy, hallucinations, misinformation and deepfakes, privacy, security, bias and accountability, and how to verify what AI tells you.</p><a href="#" onclick="showExplore('articles');return false;">Explore trust &amp; verification →</a></div></div>
 </div>
 </div>
 </section>
@@ -1890,18 +1969,23 @@ body{
 <section class="section" id="about">
 <div class="container">
 <div class="eco">
+<div class="about-intro">
 <div class="eco-copy">
+<div class="about-kicker-row">
 <div class="kicker">About AI Channel</div>
-<img src="llpa-logo.png" alt="Leading Learning Partners Association" width="180" style="width:180px;max-width:100%;height:auto;display:block;margin:0 0 1rem;">
-<h2>A global AI/AGI preparedness platform for understanding and preparing for increasingly capable AI.</h2>
-<p>AI Channel is led by the Leading Learning Partners Association (LLPA) and helps people, organizations and institutions understand what increasingly capable AI could change, assess where they may be vulnerable or underprepared, and decide what is worth doing now.</p>
-<p>Our work is evidence-led and explicit about uncertainty. We draw on research, capability evaluations, forecasts, surveys and real-world data, distinguish observed evidence from estimates and scenarios, and update our conclusions as the evidence changes.</p>
-<p>We also stay connected with researchers and practitioners working directly on AI safety, evaluations, governance and advanced AI. Those conversations help us understand emerging research and concerns firsthand, which we translate into practical information for people who are not already immersed in the field.</p>
-<p>Through tools, guides, training and expert support, AI Channel covers both the challenges people face with AI today and the possibility of substantially more capable systems in the future — including work and skills, reliable and responsible AI use, privacy and misinformation, organizational resilience, governance, education, AI control and longer-term preparedness.</p>
-<p>The goal is not to predict one future. It is to help people make better decisions and prepare across a range of plausible ones.</p>
-<div class="actions" style="justify-content:flex-start"><button class="btn btn-secondary" onclick="showAbout()">Learn more about AI Channel</button></div>
+<img class="about-logo" src="llpa-logo.png" alt="Leading Learning Partners Association" width="124">
+</div>
+<h2>A global AI preparedness platform for understanding and preparing for increasingly capable AI.</h2>
+<p class="about-lead">AI Channel, led by the Leading Learning Partners Association (LLPA), helps people and organizations understand what increasingly capable AI could change, where they may be unprepared, and what is worth doing now.</p>
+<div class="actions"><button class="btn btn-secondary" onclick="showAbout()">Learn more about AI Channel</button></div>
 </div>
 <div aria-hidden="true" class="about-photo"><img alt="" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1400&amp;q=88"/></div>
+</div>
+<div class="about-principles">
+<div class="about-principle"><h3>Evidence-led</h3><p>We draw on research, capability evaluations, forecasts, surveys and real-world data. We distinguish observed evidence from estimates and scenarios, and update our conclusions as the evidence changes.</p></div>
+<div class="about-principle"><h3>Connected to the field</h3><p>We work with researchers and practitioners across AI safety, evaluations, governance and advanced AI, translating emerging research into practical information for people outside the field.</p></div>
+<div class="about-principle"><h3>Focused on preparedness</h3><p>Our tools, guides, training and expert support cover both today’s AI challenges and preparation for more capable systems, from work and skills to privacy, governance, AI control and longer-term preparedness.</p></div>
+</div>
 </div>
 </div>
 </section>
@@ -1928,7 +2012,7 @@ body{
 <div class="explore-back" onclick="showHome()">← AI Channel</div>
 <div class="eyebrow">Courses &amp; Training</div>
 <h1>Build the AI skills you actually need.</h1>
-<p>Find learning options for individuals, teams and organizations — from practical AI use to technical skills, leadership, governance and implementation.</p>
+<p>Find learning options for individuals, teams and organizations, from practical AI use to technical skills, leadership, governance and implementation.</p>
 </div></section>
 <section class="explore-section tint-white"><div class="container">
 <div class="section-head"><div><div class="eyebrow">Find the right fit</div><h2>What are you trying to build capability in?</h2></div><p>Browse by need first. Provider and format come after.</p></div>
@@ -1958,6 +2042,7 @@ body{
 <div class="explore-card"><span class="tag">Governance</span><h3>AI Governance Control Checker</h3><p>Audit ownership, access, logging, approval and shutdown controls around an AI deployment.</p><div class="explore-link">Open tool →</div></div>
 <div class="explore-card"><span class="tag">Compliance</span><h3>EU AI Act Risk Tier Checker</h3><p>Classify a system and identify the obligations and readiness questions that may apply.</p><div class="explore-link">Open tool →</div></div>
 <div class="explore-card"><span class="tag">Verification</span><h3>Real or Fake?</h3><p>Practice spotting manipulated or AI-generated content and learn better verification habits.</p><div class="explore-link">Open trainer →</div></div>
+<div class="explore-card soft-lav"><span class="tag">Scenarios</span><h3>p(doom) Scenario Explorer</h3><p>Change assumptions and see how sensitive a toy catastrophic-risk scenario is. Educational only, not a forecast.</p><div class="explore-link">Open explorer →</div></div>
 </div>
 </div></section>
 </main>
@@ -1976,6 +2061,44 @@ body{
 <div class="explore-card"><span class="tag">Organizations</span><h3>How should an organization prepare?</h3><p>Readiness, governance, workforce change, adoption, policies and controls.</p><div class="explore-link">Browse organization guides →</div></div>
 <div class="explore-card"><span class="tag">Capability &amp; risk</span><h3>How powerful could AI become?</h3><p>Capability trends, agents, loss of control, shutdown, replication and catastrophic-risk debates.</p><div class="explore-link">Browse risk guides →</div></div>
 <div class="explore-card dark"><span class="tag">Start here</span><h3>What Is Actually Changing in AI Right Now?</h3><p>A maintained overview for people who want orientation before choosing a deeper topic.</p><div class="explore-link">Read the overview →</div></div>
+</div>
+</div></section>
+<section class="explore-section tint-white"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Guides</div><h2>Practical pieces from the original library.</h2></div><p>Plain-language explainers and checklists. Start with the question, then go deeper.</p></div>
+<div class="explore-grid">
+<div class="explore-card"><span class="tag">Using AI</span><h3>Healthy AI Use</h3><p>Habits, boundaries, and knowing when to disconnect.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Accuracy</span><h3>When AI Gets It Wrong</h3><p>What to do when a model is confident, useful, and still incorrect.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Accuracy</span><h3>AI Hallucinations</h3><p>When AI confidently gets it wrong, and how to check before you rely on it.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card soft-green"><span class="tag">Small business</span><h3>Small Business AI Safety</h3><p>Practical AI safety for sole traders and small teams.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card soft-green"><span class="tag">Checklist</span><h3>AI Due Diligence Checklist</h3><p>Before your business adopts any AI tool, run through data, privacy, compliance, and operational risk.</p><div class="explore-link">Open the checklist →</div></div>
+<div class="explore-card"><span class="tag">Work</span><h3>The AI Sandbox</h3><p>Use external AI tools without letting confidential data leave your network.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Governance</span><h3>In-House LLM Governance</h3><p>Security, privacy, and governance to build in when you train or deploy models inside the organization.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card soft-lav"><span class="tag">Library</span><h3>Resource Library</h3><p>AI safety, privacy, governance, and regulation reading from around the world.</p><div class="explore-link">Browse the library →</div></div>
+<div class="explore-card soft-blue"><span class="tag">Work</span><h3>Which Jobs Will AI Replace?</h3><p>A better way to read the lists: exposure, adoption cost, regulation, and liability, not a redundancy date.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card soft-blue"><span class="tag">Work</span><h3>Jobs Hardest for AI to Replace</h3><p>Look for friction, trust, and accountability. No career is guaranteed AI-proof.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Control</span><h3>Can AI Take Over the World?</h3><p>A chain-of-access check: capability is not enough without tools, money, networks, and granted autonomy.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Control</span><h3>Can AI Be Shut Down?</h3><p>Why “just pull the plug” is both right and too simple once copies and dependencies spread.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Scenarios</span><h3>AI Apocalypse Scenarios</h3><p>What is plausible, and what is a movie plot. Near-term risk is mostly cascades of human and machine failure.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Concepts</span><h3>The AI Singularity, Without the Mysticism</h3><p>A hypothesis about accelerating progress, not an observed event or an agreed timetable.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Risk</span><h3>AI Extinction Risk and p(doom)</h3><p>What people mean by the number, and why a personal probability is not a measured fact.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Infrastructure</span><h3>Could AI Control Critical Infrastructure?</h3><p>The access question comes first. Influence requires a connection people or attackers already made.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Evidence</span><h3>Can AI Lie?</h3><p>What scheming tests actually show, and what they do not show about motives.</p><div class="explore-link">Read the guide →</div></div>
+<div class="explore-card"><span class="tag">Evidence</span><h3>Can AI Copy Itself?</h3><p>Replication, model weights, and the missing steps between copying files and staying online.</p><div class="explore-link">Read the guide →</div></div>
+</div>
+</div></section>
+<section class="explore-section tint-soft"><div class="container">
+<div class="section-head"><div><div class="eyebrow">Ten ways risk shows up</div><h2>Start with the risk that worries you most.</h2></div><p>Each cluster separates what is plausible, what is uncertain, and what you can do about it.</p></div>
+<div class="explore-grid">
+<div class="explore-card"><span class="tag">Takeover &amp; extinction</span><h3>AI Takeover</h3><p>What an AI takeover would actually require. Plausible pathways, known constraints, and science-fiction assumptions.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Work &amp; income</span><h3>Jobs &amp; Careers</h3><p>Task-level exposure and career resilience, without pretending anyone can predict your redundancy date.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Fraud &amp; verification</span><h3>Scams &amp; Deepfakes</h3><p>Voice cloning, deepfake video, phishing, and the verification habits that reduce your odds of being fooled.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Digital resilience</span><h3>Cyber Resilience</h3><p>What AI changes about cyber risk, and how households and small organizations can remove single points of failure.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Prep without panic</span><h3>Preparedness</h3><p>Preparations for outages, disruption, and misinformation that stay sensible even if the worst case never arrives.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Identity &amp; privacy</span><h3>Privacy &amp; Identity</h3><p>Passkeys, identity theft, voice cloning, and how to reduce the personal data attackers can turn into impersonation.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Verify first</span><h3>Verification &amp; Misinformation</h3><p>Check AI-generated images, video, text, and viral claims with provenance and source checks, not detector hype.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Who sets the rules</span><h3>AI Governance &amp; Control</h3><p>Who regulates AI, what governments and companies can actually control, and where accountability sits when systems cause harm.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Workplace AI</span><h3>AI at Work &amp; Business</h3><p>Confidential data, employee use, policies, and rules for generative AI at work.</p><div class="explore-link">Explore cluster →</div></div>
+<div class="explore-card"><span class="tag">Evidence desk</span><h3>Evidence &amp; AI Safety</h3><p>Scheming, alignment, agent incidents, and the difference between a safety evaluation and a real-world capability.</p><div class="explore-link">Explore cluster →</div></div>
 </div>
 </div></section>
 </main>
@@ -2091,7 +2214,7 @@ const audienceData = {
         "Could You Tell If That Video, Voice or Message Was Fake?",
         "Can You Spot What AI Made?",
         "How Can You Tell What’s Real Anymore?",
-        "What Does AI Know About You — and How Do You Protect It?",
+        "What Does AI Know About You, and How Do You Protect It?",
         "How Could AI Make You Easier to Hack or Scam?",
         "How Dependent Are You on Systems That Could Fail?",
         "What Should You Check Before You Believe Something Online?"
@@ -2104,7 +2227,7 @@ const audienceData = {
         "Why Do AI Experts Keep Thinking Big Changes Could Happen Sooner?"
       ]},
       {name:"Bigger questions about AI",deeper:true,items:[
-        "What Could Actually Go Wrong With AI — and How Would It Affect You?",
+        "What Could Actually Go Wrong With AI, and How Would It Affect You?",
         "Could AI Actually Become Powerful Enough That We Lose Control?",
         "If an AI Became Dangerous, Could We Just Turn It Off?",
         "What Would an AI Disaster Actually Look Like?",
@@ -2233,7 +2356,7 @@ const audienceData = {
       {name:"Prepare your workforce",items:[
         "If AI Changes Your Team’s Work in 3 Years, Are You Preparing People Now?",
         "How Can You Help Your People Stay Valuable as AI Improves?",
-        "How Can You Teach Your Team to Use AI Well — Without Becoming the AI Expert?"
+        "How Can You Teach Your Team to Use AI Well, Without Becoming the AI Expert?"
       ]},
       {name:"HR-specific tools & guides",items:[
         "What Should Your Company’s AI Policy Actually Say?",
@@ -2456,7 +2579,7 @@ const audienceData = {
 
   government:{
     label:"For Government",
-    title:"Understand what AI changes — and what governments can actually do about it.",
+    title:"Understand what AI changes, and what governments can actually do about it.",
     sub:"Evidence-based briefings and practical tools for AI adoption, procurement, regulation, workforce policy and emerging risks.",
     questions:[
       "What should we check before procuring an AI system?",
@@ -2489,7 +2612,7 @@ const audienceData = {
       ]},
       {name:"Regulation & oversight",items:[
         "Who Is Actually Responsible When AI Causes Harm?",
-        "Where Could AI Gain Access to Critical Infrastructure — and Where Can You Stop It?",
+        "Where Could AI Gain Access to Critical Infrastructure, and Where Can You Stop It?",
         "Would We Actually Be Able to Stop a Dangerous AI System?",
         "How Can You Know an AI System Is Safe Before Deployment?",
         "What Parts of Advanced AI Development Can Governments Actually Monitor or Control?"
@@ -2696,7 +2819,7 @@ function renderAudiencePages(){
             <div class="eyebrow">Read · watch · go deeper</div>
             <h2>Choose the format that works for you.</h2>
           </div>
-          <p>The same audience questions should be available as articles, videos, reports and tools — not hidden in separate parts of the site.</p>
+          <p>The same audience questions should be available as articles, videos, reports and tools, not hidden in separate parts of the site.</p>
         </div>
         <div class="format-strip">
           ${audienceFormats[key].map(item=>`
@@ -2911,9 +3034,9 @@ function getGuideIndex(){
     ["home","Explore","What Is Actually Changing in AI Right Now?","featured"],
     ["home","Explore","AI Terms Explained Without the Jargon","featured"],
     ["home","Explore","Where Can You Find Reliable Information About AI?","featured"],
-    ["home","Newsletter","What Actually Happened in AI This Week — and What Does It Mean for You?","newsletter"],
+    ["home","Newsletter","What Actually Happened in AI This Week, and What Does It Mean for You?","newsletter"],
     ["home","Reports","AGI in 10 Pages","featured"],
-    ["home","Video","What changed in AI — and what actually matters to you?","featured"]
+    ["home","Video","What changed in AI, and what actually matters to you?","featured"]
   ].forEach(x=>guides.push({audience:x[0],audienceLabel:x[1],group:x[1],title:x[2],section:x[3]}));
   return guides;
 }
@@ -3136,13 +3259,27 @@ function stepHomeRole(dir){
 })();
 renderAudiencePages();
 syncHomeSnap();
+(function initAboutMotion(){
+  const about=document.getElementById("about");
+  if(!about||window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  about.classList.add("will-animate");
+  const reveal=()=>about.classList.add("is-in");
+  if(!("IntersectionObserver" in window)){ reveal(); return; }
+  const io=new IntersectionObserver((entries)=>{
+    if(entries.some(entry=>entry.isIntersecting)){
+      reveal();
+      io.disconnect();
+    }
+  },{threshold:.22});
+  io.observe(about);
+})();
 </script>
 <footer class="site-footer" id="siteFooter">
 <div class="container footer-grid">
 <div class="footer-brand">
 <div class="footer-logo">AI Channel<span class="footer-dot">●</span></div>
 <p>
-            A practical guide to navigating AI — with tools, training, practical content and support
+            A practical guide to navigating AI, with tools, training, practical content and support
             to help people and organizations prepare for what comes next.
           </p>
 </div>
