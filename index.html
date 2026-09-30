@@ -346,8 +346,12 @@
     .side-metric strong{display:block;font-size:20px;letter-spacing:-.03em;color:#121826}
     .side-metric span{font-size:11px;color:#667085}
 
+    .glance-label{
+      position:static;display:inline-block;margin:0 0 10px;color:#315EFB;
+      background:#eef3ff;border:0;backdrop-filter:none;padding:6px 10px
+    }
     .glance-card h4{
-      margin:14px 0 6px;font-size:18px;letter-spacing:-.02em
+      margin:0 0 6px;font-size:18px;letter-spacing:-.02em
     }
     .glance-card p{
       margin:0;color:var(--muted);font-size:14px
@@ -503,6 +507,9 @@
       position:absolute;z-index:2;left:12px;top:12px;background:rgba(255,255,255,.92);
       border:1px solid rgba(255,255,255,.55);color:#111827;padding:6px 9px;border-radius:999px;
       font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase
+    }
+    .format-pill-inline{
+      position:static;display:inline-block;margin:0 0 10px;background:#f4f7ff;border:1px solid #e4e7ec
     }
     .format-card-body{padding:17px}
     .format-card-body h4{font-size:18px;line-height:1.18;letter-spacing:-.02em;margin:0 0 7px}
@@ -2799,11 +2806,7 @@ function renderAudiencePages(){
         <div class="audience-photo-strip">
           ${visualSummary[key].map(v=>`
             <div class="glance-card">
-              <div class="human-photo">
-                <img src="${v.img}" alt="${v.title}">
-                <div class="photo-shade"></div>
-                <div class="photo-label">${v.label}</div>
-              </div>
+              <div class="photo-label glance-label">${v.label}</div>
               <h4>${v.title}</h4>
               <p>${v.caption}</p>
             </div>
@@ -2824,11 +2827,8 @@ function renderAudiencePages(){
         <div class="format-strip">
           ${audienceFormats[key].map(item=>`
             <div class="format-card">
-              <div class="format-visual">
-                <img src="${item.img}" alt="${item.title}">
-                <span class="format-pill">${item.format}</span>
-              </div>
               <div class="format-card-body">
+                <span class="format-pill format-pill-inline">${item.format}</span>
                 <h4>${item.title}</h4>
                 <p>${item.desc}</p>
                 <div class="format-link">${item.format==="Video" ? "Watch" : item.format==="Report" ? "Open report" : "Read"} →</div>
